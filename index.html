@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sana'a Center Database</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Sana'a Center Database</h1>
+				<p style="text-align: center;">The Database of the Weekly PDF Reports for the Center (2024 - 2025)</p>
+				  <button id="exp_btn" onclick="scrollToElementWithOffset('filterGovernorate', -40)" id="explore_btn">
+						Explore the database
+					</button>
+			</header>
+			<div id="filter">
+				<label for="" class="filterLabel">Governorate</label>
+				<select id="filterGovernorate">
+					<option value="All">All</option>
+					<option value="Abyan">Abyan</option>
+					<option value="Aden">Aden</option>
+					<option value="Al-Bayda">Al-Bayda</option>
+					<option value="Al-Dhalea">Al-Dhalea</option>
+					<option value="Al-Jawf">Al-Jawf</option>
+					<option value="Al-Mahrah">Al-Mahrah</option>
+					<option value="Al-Mahwit">Al-Mahwit</option>
+					<option value="Amran">Amran</option>
+					<option value="Dhamar">Dhamar</option>
+					<option value="Hadramawt">Hadramawt</option>
+					<option value="Hajjah">Hajjah</option>
+					<option value="Hudaydah">Hudaydah</option>
+					<option value="Ibb">Ibb</option>
+					<option value="Lahj">Lahj</option>
+					<option value="Marib">Marib</option>
+					<option value="Raymah">Raymah</option>
+					<option value="Sa'ada">Sa’dah</option>
+					<option value="Sana'a">Sana’a</option>
+					<option value="Sana'a city">Sana’a city</option>
+					<option value="Shabwah">Shabwah</option>
+					<option value="Socotra">Socotra</option>
+					<option value="Taiz">Taiz</option>
+				</select>
+
+				<label for="" class="filterLabel">Start Date</label>
+				<input type="date" class="filterDate" id="filterFromDate" placeholder="Date">
+				<label for="" class="filterLabel">End Date</label>
+				<input type="date" class="filterDate" id="filterToDate" placeholder="Date">
+				<label for="" class="filterLabel">Event Type</label>
+				<select id="filterEventType">
+					<option value="All">All</option>
+					<option value="International">International</option>
+					<option value="US Strikes on Houthi-Controlled Territories">US Strikes on Houthi-Controlled Territories</option>
+					<option value="Israel Strikes on Houthi-Controlled Territories">Israel Strikes on Houthi-Controlled Territories</option>
+					<option value="Houthi Operations Against US Forces and Israel">Houthi Operations Against US Forces and Israel</option>
+					<option value="Houthi Attacks on Shipping">Houthi Attacks on Shipping</option>
+					<option value="Frontline Fighting with Houthi Forces">Frontline Fighting with Houthi Forces</option>
+					<option value="Fighting Clash with Al-Qaeda">Fighting Clash with Al-Qaeda</option>
+					<option value="Drones and Missiles">Drones and Missiles</option>
+					<option value="Landmine">Landmine</option>
+					<option value="Other Developments">Other Developments</option>
+				</select>
+			</div>
+
+
+			<div class="btnDiv">
+				<button id="showTableBtn">Show List</button>
+				<button id="showMapBtn">Show Map</button>
+				<button id="downloadBtn">Download Filtered Data</button>
+			</div>
+
+
+			<div id="tableContainer">
+			<!-- Your existing table goes here -->
+				<table id="excelTable">
+				    <colgroup>
+						<col style="width: 220px;">   <!-- Year -->
+						<col style="width: 150px;">  <!-- Week -->
+						<col style="width: 90px;">   <!-- Date -->
+						<col style="width: 100px;">  <!-- Governorate -->
+						<col style="width: auto;">   <!-- Event (takes remaining space) -->
+						<col style="width: 120px;">  <!-- Source -->
+					</colgroup>
+
+					<thead>
+						<tr>
+						<th>Type</th>
+						<th>Week</th>
+						<th>Date</th>
+						<th>Governorate</th>
+						<th>Event</th>
+						<th>Source</th>
+						</tr>
+					</thead>
+				<tbody id="dataTable">
+					<!-- Dynamic rows inserted here -->
+				</tbody>
+				</table>
+			<table id="excelTable">...</table>
+			</div>
+
+			<div id="rowDetailModal" class="modal">
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<h3>Row Details</h3>
+					<div id="modalDetails"></div>
+				</div>
+			</div>
+
+			<div id="mapContainer" style="width: 100%; height: 600px; display:none;">
+				<iframe src="Map_project\SC Database.html" id= 'mapFrame' style="border:none; width:100%; height:100%;"></iframe>
+			</div>
+
+
+			<script src="assets/js/main.js"></script>
+			<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+			<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+			<script src="data/database.js"></script>
+			<script src="assets\js\myCode.js"></script>
+
+	</body>
+</html>
